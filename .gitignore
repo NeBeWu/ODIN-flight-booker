@@ -32,3 +32,6 @@
 
 # Ignore asdf files
 /.tool-versions
+
+# Ignore data files
+/db/data.csv

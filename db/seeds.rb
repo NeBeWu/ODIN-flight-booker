@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'csv'
+
+csv = CSV.open('./db/data.csv').read
+
+csv.each do |airport|
+  Airport.create(city: airport[0], location: airport[1], code: airport[2])
+end
