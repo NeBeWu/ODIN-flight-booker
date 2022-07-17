@@ -17,7 +17,8 @@
 
 # Setup flights
 # airports = Airport.all
-# 10_000.times do |_time|
+# 1_000_000.times do |time|
+#   puts time
 #   start = rand(1.year.ago..52.weeks.from_now).to_date
 #   duration = rand 1..259_200
 

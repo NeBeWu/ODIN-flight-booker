@@ -1,0 +1,21 @@
+<%= form_with scope: :flight, method: :get do |f| %>
+  <div>
+    <%= f.label :departure_airport, 'Departure' %>
+    <%= f.select :departure_airport, @departure_airports %>
+  </div>
+  <div>
+    <%= f.label :arrival_airport, 'Destination' %>
+    <%= f.select :arrival_airport, @arrival_airports %>
+  </div>
+  <div>
+    <%= f.label :number_passengers,'Number of passengers' %>
+    <%= f.select :number_passengers, [1,2,3,4] %>
+  </div>
+  <div>
+    <%= f.label :flight_date, 'Date' %>
+    <%= f.select :flight_date, @flight_dates %>
+  </div>
+  <div>
+    <%= f.submit 'Search' %>
+  </div>
+<% end %>
