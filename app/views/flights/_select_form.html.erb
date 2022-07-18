@@ -1,9 +1,9 @@
-<%= form_with scope: :booking, method: :get do |f| %>
+<%= form_with url: 'bookings/new', scope: :booking, method: :get do |f| %>
   <%= f.hidden_field :number_passengers, value: @number_passengers %>
   <% @flights.each do |flight| %>
     <div>
-      <%= f.label :flight, 'Flight' %>
-      <%= f.radio_button :flight, flight.id %>
+      <%= f.label :flight_id, 'Flight' %>
+      <%= f.radio_button :flight_id, flight.id %>
     </div>
     <%= render flight %>
   <% end %>
