@@ -1,18 +1,16 @@
 <h1>Booking</h1>
 <%= form_with model: @new_booking do |f| %>
   <%= render @new_booking.flight %>
-  <% @new_booking.passengers.each_with_index do |passenger, number| %>
-    <%= f.fields_for :passenger, passenger do |passenger_f| %>
-      <p><%= "Passenger #{number + 1}" %></p>
-      <div>
-        <%= f.label :name, 'Name' %>
-        <%= f.text_field :name, required: true %>
-      </div>
-      <div>
-        <%= f.label :email, 'Email' %>
-        <%= f.email_field :email, required: true %>
-      </div>
-    <% end %>
+  <%= f.fields_for :passengers do |passenger_f| %>
+    <p><%= "Passenger" %></p>
+    <div>
+      <%= passenger_f.label :name, 'Name' %>
+      <%= passenger_f.text_field :name, required: true %>
+    </div>
+    <div>
+      <%= passenger_f.label :email, 'Email' %>
+      <%= passenger_f.email_field :email, required: true %>
+    </div>
   <% end %><br>
-<%= f.submit 'Book' %>
+  <%= f.submit 'Book' %>
 <% end %>

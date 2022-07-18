@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def new
     @new_booking = Booking.new(booking_params)
 
-    booking_params[:number_passengers].to_i.times do
+    @new_booking.number_passengers.times do
       @new_booking.passengers.build
     end
   end
