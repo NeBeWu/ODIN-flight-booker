@@ -7,7 +7,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  def create; end
+  def create
+    @new_booking = Booking.create(booking_params)
+  end
 
   private
 

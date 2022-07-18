@@ -1,5 +1,7 @@
 <h1>Booking</h1>
 <%= form_with model: @new_booking do |f| %>
+  <%= f.hidden_field :flight_id, value: @new_booking.flight_id %>
+  <%= f.hidden_field :number_passengers, value: @new_booking.number_passengers %>
   <%= render @new_booking.flight %>
   <%= f.fields_for :passengers do |passenger_f| %>
     <p><%= "Passenger" %></p>
