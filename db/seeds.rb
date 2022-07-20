@@ -7,23 +7,25 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Setup airports
-# require 'csv'
+require 'csv'
 
-# csv = CSV.open('./db/data.csv').read
+csv = CSV.open('./db/data.csv').read
 
-# csv.each do |airport|
-#   Airport.create(city: airport[0], location: airport[1], code: airport[2])
-# end
+csv.each_with_index do |airport, index|
+  Airport.create(city: airport[0], location: airport[1], code: airport[2]) if (index % 500).zero?
+end
 
 # Setup flights
-# airports = Airport.all
-# 1_000_000.times do |time|
-#   puts time
-#   start = rand(1.year.ago..52.weeks.from_now).to_date
-#   duration = rand 1..259_200
+airports = Airport.all
+5_000.times do |time|
+  puts time
+  start = rand(1.day.ago..52.weeks.from_now).to_date
+  duration = rand 1..259_200
 
-#   a = Flight.new(start_datetime: start, duration_interval: duration)
+  a = Flight.new(start_datetime: start, duration_interval: duration)
 
-#   a.departure_airport = airports.sample
-#   a.arrival_airport = airports.sample
-# end
+  a.departure_airport = airports.sample
+  a.arrival_airport = airports.sample
+
+  a.save
+end
