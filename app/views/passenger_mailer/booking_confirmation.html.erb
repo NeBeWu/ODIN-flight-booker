@@ -1,0 +1,12 @@
+<h1>Hey, <%= @passenger.name %>, you have booked a flight with us.</h1>
+<p>
+  The flight from <%= @flight.departure_airport.city %>
+  to <%= @flight.arrival_airport.city %>
+  will take off at <%= @flight.start_datetime %>.
+</p>
+<p>
+  Please be at the corresponding gate at least 30 minutes earlier.
+</p>
+<p>
+  For more info check <%= link_to 'Booking', "http://localhost:3000/bookings/#{@booking.id}" %>
+</p>

@@ -1,0 +1,10 @@
+<%= @passenger.name %>, you have booked a flight with us.
+===============================================
+
+The flight from <%= @flight.departure_airport.city %>
+to <%= @flight.arrival_airport.city %>
+will take off at <%= @flight.start_datetime %>.
+
+Please be at the corresponding gate at least 30 minutes earlier.
+
+For more info check <%= link_to 'Booking', "http://localhost:3000/bookings/#{@booking.id}" %>
