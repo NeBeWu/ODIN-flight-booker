@@ -35,3 +35,6 @@
 
 # Ignore data files
 /db/data.csv
+
+# Ignore application configuration
+/config/application.yml
