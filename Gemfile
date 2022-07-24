@@ -78,6 +78,9 @@ group :development do
 
   # Allows to automatically reload your browser when 'view' files are modified
   gem 'guard-livereload'
+
+  # Preview mail in the browser instead of sending
+  gem 'letter_opener'
 end
 
 group :test do
